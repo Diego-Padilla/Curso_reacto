@@ -2,7 +2,9 @@ import { useState } from "react";
 
 const initialState = {
     cart:[],
-}
+    orderIsOpen: false,
+    menuIsOpen: false
+};
 
 
 const useInitialState = () => {
@@ -11,9 +13,10 @@ const useInitialState = () => {
     
     const addToCart = (payload) =>{
         setState({
-             
             ...state,
-            cart: [...state.cart, payload]
+             cart: state.cart.includes(payload)
+             ? state.cart
+            : [...state.cart, payload]
         });
     };
 
@@ -25,10 +28,27 @@ const useInitialState = () => {
         });
     };
 
+    const toggleOrder = () => {
+        console.log('statechange');
+        setState({
+            ...state,
+            orderIsOpen: !state.orderIsOpen,
+        });
+    };
+
+    const toggleMenu = ()=> {
+        setState({
+            ...state,
+            menuIsOpen: !state.menuIsOpen,
+            
+        });
+    };
     return{
         state,
         addToCart,
         removeFromCart,
+        toggleMenu,
+        toggleOrder,
     }
 }
 

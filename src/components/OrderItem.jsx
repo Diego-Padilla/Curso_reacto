@@ -22,7 +22,7 @@ const OrderItem = ({product}) => {
 			
 			
 			
-			<img src={close} alt="close" onClick={()=>handleRemove(product)}/>
+			<img className='clickAble-area' src={close} alt="close" onClick={()=>handleRemove(product)}/>
 		</div>
 	);
 }

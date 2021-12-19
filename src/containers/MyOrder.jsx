@@ -2,7 +2,7 @@ import React,{useContext} from 'react';
 import OrderItem from '@components/OrderItem';
 import AppContext from '../context/AppContext'
 import '@styles/MyOrder.scss';
-import flecha from "@icons/flechita.svg";
+import arrow from "@icons/flechita.svg";
 import { useState } from 'react/cjs/react.development';
 
 
@@ -20,7 +20,7 @@ const MyOrder = () => {
 	return (
 		<aside className="MyOrder">
 			<div className="title-container">
-				<img src={flecha} alt="arrow" />
+				<img className='clickAble-area' src={arrow} alt="arrow" />
 				<p className="title">My order</p>
 			</div>
 			<div>

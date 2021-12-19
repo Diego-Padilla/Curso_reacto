@@ -1,5 +1,13 @@
 @import 'vars';
 
+.added{
+	pointer-events: none;
+}
+.add{
+	pointer-events: all;
+}
+
+
 .ProductItem {
 	width: 240px;
 }
