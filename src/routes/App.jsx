@@ -13,14 +13,16 @@ import Orders from '@pages/Orders';
 import NotFound from '@pages/NotFound';
 import '@styles/global.css';
 import AppContext from "../context/AppContext"
+import useInitialState from '../hooks/useInitialState';
 
 const App = () => {
+	const initialState = useInitialState();
 	return (
-		<AppContext.Provider value = {} >
+		<AppContext.Provider value = {initialState} >
 			<BrowserRouter>
 				<Layout>
 					<Routes>
-						<Route path="/"  element ={<Home/>} />
+						<Route path="/"	 element ={<Home/>} />
 						<Route path="/login" element={<Login/>} />
 						<Route path="/password-recovery" element={<PasswordRecovery/>} />
 						<Route path="/send-email" element={<SendEmail/>} />

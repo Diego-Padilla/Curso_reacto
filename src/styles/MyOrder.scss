@@ -5,8 +5,23 @@
 	padding: 24px;
 	box-sizing: border-box;
 	position: absolute;
-	right: 0;
+	right: -360px;
+	background-color: white;
+	top: 60px;
+	bottom: auto;
+	max-height: 700px;
+	border-radius: 6px;
+	border: 1px solid var(--very-light-pink);
+	position: fixed;
+	transition: 1s ease-out;
+	animation: swipeLeft 1s ease forwards;
+	
 }
+@keyframes swipeLeft {
+	100% {transform: translateX(-360px);}
+	
+}
+
 .title-container {
 	display: flex;
 }
@@ -28,6 +43,31 @@
 	border-radius: 8px;
 	padding: 0 24px;
 }
+.my-order-content{
+overflow-y: scroll;
+max-height: 400px;
+
+} 
+/* width */
+.my-order-content::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+.my-order-content::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+.my-order-content::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+.my-order-content::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
 .order p:nth-child(1) {
 	display: flex;
 	flex-direction: column;
